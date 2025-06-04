@@ -263,7 +263,7 @@ OX.
 X.O
 ```
 
-Die Methode, um einen Spielzug rückgängig zu machen, liest sich fast wie das Inverse (Umgekehrte) der `move`-Methode. Faktisch entpsricht dies auch der Intention: ein ausgeführter Zug wird rückabgewickelt.
+Die Methode, um einen Spielzug rückgängig zu machen, liest sich fast wie das Inverse (Umgekehrte) der `move`-Methode. Faktisch entspricht dies auch der Intention: ein ausgeführter Zug wird rückabgewickelt.
 
 ```java
     public void undoMove() {
