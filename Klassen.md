@@ -34,7 +34,7 @@ Dazu kommen kann die Zuweisung eines Initialwertes
 Bei Klassenvariablen wird ein `static` vorangestellt, z.B.:
 
 ```java
-    static initCounter = 0;
+    static int initCounter = 0;
 ```
 
 Methoden werden nach diesem Schema deklariert; bei Klassenmethoden wird ein `static` vorangestellt
