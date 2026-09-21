@@ -60,7 +60,7 @@ Sie kennen diese verschiedenen Repräsentationen bereits für primitive Typen. Z
 
 Bei Gleitkommazahlen wie `float` und `double` ist die Kodierung und der Bezug zwischen der binären und dezimalen Zahlenrepräsentation komplizierter. Der technische Standard [IEEE 754](https://de.wikipedia.org/wiki/IEEE_754) definiert die Darstellung von Binär- und Dezimalzahlen für Gleitkommazahlen und für die Durchführungen von Berechnungen.
 
-Datenwerte vom Typ `char` folgen der Zeichenkodierung UTF-8. [UTF-8](https://de.wikipedia.org/wiki/UTF-8) legt fest, welches Zeichen bzw. Symbol wie durch welche binäre Zahlenkodierung abgebildet wird.
+Datenwerte vom Typ `char` folgen der Zeichenkodierung UTF-16. [UTF-16](https://de.wikipedia.org/wiki/UTF-16) legt fest, welches Zeichen bzw. Symbol wie durch welche binäre Zahlenkodierung abgebildet wird.
 
 ## Veranschaulichung: Kodierung eines Schachfelds
 

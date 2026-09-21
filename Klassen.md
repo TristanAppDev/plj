@@ -1,10 +1,10 @@
 # Einfache Klassen
 
-Eine Klasse definiert ein Kodierschema für seine Instanzen (damit sind die Variablen, genauer Instanzvariablen gemeint) und Umgangsweisen mit dem Kodierungschema (Methoden, genauer Instanzmethoden).  
+Eine Klasse definiert ein Kodierschema für ihre Instanzen (damit sind die Variablen, genauer Instanzvariablen gemeint) und Umgangsweisen mit dem Kodierungschema (Methoden, genauer Instanzmethoden).  
 
 In der Objektorientierung strebt man an, die Realisierung der Implementierung, d.h. die Details der Kodierung (die Variablen) und die Details des Umgangs mit der Kodierung (die Methoden), zu verbergen. Das geschieht in aller Regel dadurch, dass die intern geführten Variablen _private_ gesetzt werden und dass die Methoden keinen Einblick in den zugrundeliegenden Programmcode geben.
 
-Das heißt, anders gesagt: Mit Klassen werden zusammengesetzte Datentypen (im Javasprech "Referenztypen") erstellt, wobei die Methoden die entscheidenden Abstraktionsebene sind, um mit den Instanzen einer Klasse zu arbeiten.
+Das heißt, anders gesagt: Mit Klassen werden zusammengesetzte Datentypen (im Javasprech "Referenztypen") erstellt, wobei die Methoden die entscheidenden Abstraktionsebenen sind, um mit den Instanzen einer Klasse zu arbeiten.
 
 > Aus pragmatischen Gründen werden wir bei der Arbeit mit der JShell Variablen nicht _private_ setzen, damit wir während der Entwicklungsarbeit sehen können, welche Datenwerte in den Variablen gespeichert sind. Ein anderer Weg ist, über die `toString`-Methode Einblicke in maßgebliche Variablenwerte zu geben. 
 
@@ -34,7 +34,7 @@ Dazu kommen kann die Zuweisung eines Initialwertes
 Bei Klassenvariablen wird ein `static` vorangestellt, z.B.:
 
 ```java
-    static initCounter = 0;
+    static int initCounter = 0;
 ```
 
 Methoden werden nach diesem Schema deklariert; bei Klassenmethoden wird ein `static` vorangestellt
@@ -134,7 +134,7 @@ Statt einer Altersangabe geben wir im Konstruktor ein Geburtsdatum `birth` und o
 
 Damit niemand Zugriff auf die Variable `birth` hat, denn das Geburtsdatum soll nicht verändert werden können (auch nicht in der JShell), ist die Variable auf `private` gesetzt. Der Name kann auch später nach der Geburt oder irgendwann im Leben einer Person angepasst werden. Der Zugriff auf die Variable ist nicht reglementiert.
 
-Das Alter wird über die Methode `getAge` abhängig von einem gegebenen Datum (oder dem aktuellen Tagesdatum) berechnet. Für Zeiträume die _vor_ der Geburt liegen, wir eine "negative" Dauer angegeben.
+Das Alter wird über die Methode `getAge` abhängig von einem gegebenen Datum (oder dem aktuellen Tagesdatum) berechnet. Für Zeiträume die _vor_ der Geburt liegen, wird eine "negative" Dauer angegeben.
 
 ```java
 import java.time.LocalDate;
@@ -421,9 +421,9 @@ record Person(LocalDate birth, String name) {
 ```
 
 * Die im Konstruktor angegebenen Variablen sind (1) `final`, d.h. unveränderlich (_immutable_) und es werden (2) für die Variablen automatisch Abrufmethoden angelegt, hier `birth()` und `name()`.
-* Aufgrund der Immutabilität (nicht Überschreibbarkeit) von Variablen in Datenklassen, kann man auch keine Variablenwerte mehr nach dem Konstruktoraufruf ändern! Wenn man also den Namen mit `setName` anpassen möchte, _muss_ man eine neue Instanz von `Person` zurückgeben, die das Geburtsdatum beibehält, aber mit einem neuen Namen versehen ist. Datenklassen verlangen nach einem anderen Programmierstil!
+* Aufgrund der Immutabilität (Unveränderlichkeit) von Variablen in Datenklassen, kann man auch keine Variablenwerte mehr nach dem Konstruktoraufruf ändern! Wenn man also den Namen mit `setName` anpassen möchte, _muss_ man eine neue Instanz von `Person` zurückgeben, die das Geburtsdatum beibehält, aber mit einem neuen Namen versehen ist. Datenklassen verlangen nach einem anderen Programmierstil!
 * Die Überprüfung für den Wert von `name` muss in den Konstruktor wandern. Grund ist wieder die Immutabilität.
-* Datenklassen erzeugen automatisch eine `toString`-Methode, die die Variablenwerte aus dem Konstruktur enthält und anzeigt. Das ist in den meisten Fällen praktisch und hilfreich.
+* Datenklassen erzeugen automatisch eine `toString`-Methode, die die Variablenwerte aus dem Konstruktor enthält und anzeigt. Das ist in den meisten Fällen praktisch und hilfreich.
 * Wenn man möchte, könnte man auch hier eine Klassenmethode namens `of` anlegen, was bei Datenklassen aber in der Regel weniger Sinn macht. 
 
 **Interaktion:**
